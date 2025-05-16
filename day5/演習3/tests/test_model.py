@@ -172,6 +172,7 @@ def test_model_reproducibility(sample_data, preprocessor):
         predictions1, predictions2
     ), "モデルの予測結果に再現性がありません"
 
+
 def test_prediction_value_range(train_model):
     """モデルの予測値の範囲を検証"""
     model, X_test, _ = train_model
