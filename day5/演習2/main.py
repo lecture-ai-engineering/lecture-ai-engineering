@@ -247,6 +247,8 @@ def test_model_performance():
         metrics["inference_time"] < 1.0
     ), f"推論時間が長すぎます: {metrics['inference_time']}秒"
 
+def test_sample():
+    assert 1+1 == 2 , "1+1は2であるべきです"
 
 if __name__ == "__main__":
     # データロード
