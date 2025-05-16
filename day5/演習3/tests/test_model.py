@@ -171,3 +171,13 @@ def test_model_reproducibility(sample_data, preprocessor):
     assert np.array_equal(
         predictions1, predictions2
     ), "モデルの予測結果に再現性がありません"
+
+def test_prediction_value_range(train_model):
+    """モデルの予測値の範囲を検証"""
+    model, X_test, _ = train_model
+
+    # 予測
+    y_pred = model.predict(X_test)
+
+    # 予測値が0または1であることを確認
+    assert np.all(np.isin(y_pred, [0, 1])), "予測値が0または1ではありません"
